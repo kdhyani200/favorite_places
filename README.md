@@ -27,14 +27,14 @@ Built using **Riverpod** for state management and **Google Maps API** for locati
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="screenshots/empty_home.png" width="250"/>
-  <img src="screenshots/empty_add.png" width="250"/>
-  <img src="screenshots/map_view.png" width="250"/>
+  <img src="screenshots/empty_home.jpg" width="250"/>
+  <img src="screenshots/empty_add.jpg" width="250"/>
+  <img src="screenshots/map_view.jpg" width="250"/>
 </p>
 
 <p align="center">
-  <img src="screenshots/place_detail.png" width="250"/>
-  <img src="screenshots/fill_home.png" width="250"/>
+  <img src="screenshots/place_detail.jpg" width="250"/>
+  <img src="screenshots/fill_home.jpg" width="250"/>
 </p>
 
 ---
