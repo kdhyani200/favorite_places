@@ -1,0 +1,36 @@
+name: favorite_places
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  google_fonts: ^8.0.2
+  uuid: ^4.5.3
+  flutter_riverpod: ^3.3.1
+  image_picker: ^1.2.1
+  location: ^8.0.1
+  http: ^1.6.0
+  google_maps_flutter: ^2.17.0
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  flutter_dotenv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Registering the .env file as an asset so the app can read it
+  assets:
+    - .env

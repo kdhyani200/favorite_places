@@ -1,0 +1,96 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ImageInput extends StatefulWidget {
+  const ImageInput({super.key, required this.onPickImage});
+
+  final void Function(File? image) onPickImage; // Changed to File?
+
+  @override
+  State<ImageInput> createState() => _ImageInputState();
+}
+
+class _ImageInputState extends State<ImageInput> {
+  File? _selectedImage;
+
+  void _takePicture(bool isCamera) async {
+    final imagePicker = ImagePicker();
+    final pickedImage = await imagePicker.pickImage(
+      source: isCamera ? ImageSource.camera : ImageSource.gallery,
+      maxWidth: 600,
+    );
+    if (pickedImage == null) return;
+
+    setState(() {
+      _selectedImage = File(pickedImage.path);
+    });
+    widget.onPickImage(_selectedImage);
+  }
+
+  // New method to clear the selection
+  void _deleteImage() {
+    setState(() {
+      _selectedImage = null;
+    });
+    widget.onPickImage(null);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Widget content = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        TextButton.icon(
+          icon: const Icon(Icons.camera),
+          label: const Text("Camera"),
+          onPressed: () => _takePicture(true),
+        ),
+        TextButton.icon(
+          icon: const Icon(Icons.photo),
+          label: const Text("Gallery"),
+          onPressed: () => _takePicture(false),
+        ),
+      ],
+    );
+
+    if (_selectedImage != null) {
+      content = Stack(
+        children: [
+          Image.file(
+            _selectedImage!,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          // Delete button overlay
+          Positioned(
+            top: 10,
+            right: 10,
+            child: CircleAvatar(
+              backgroundColor: Colors.black54,
+              child: IconButton(
+                icon: const Icon(Icons.delete, color: Colors.redAccent),
+                onPressed: _deleteImage,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+    return Container(
+      height: 250,
+      width: double.infinity,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1,
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5),
+        ),
+      ),
+      child: content,
+    );
+  }
+}
