@@ -21,11 +21,14 @@ class PlaceDetailScreen extends StatelessWidget {
       appBar: AppBar(title: Text(place.title)),
       body: Stack(
         children: [
-          Image.file(
-            place.image,
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
+          Hero(
+            tag: place,
+            child: Image.file(
+              place.image,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
 
           Positioned(

@@ -61,6 +61,7 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
               children: [
                 TextFormField(
                   keyboardType: TextInputType.text,
+                  textCapitalization: TextCapitalization.sentences,
                   style: const TextStyle(color: Colors.black),
                   maxLines: 1,
                   controller: _titleController,
