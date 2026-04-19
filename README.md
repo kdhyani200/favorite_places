@@ -1,17 +1,106 @@
-# favorite_places
+# 📍 Favorite Places App
 
-A new Flutter project.
+A sleek, modern Flutter application that allows users to save and manage their favorite locations with titles, photos, and real-time geographic data.  
+Built using **Riverpod** for state management and **Google Maps API** for location services.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📸 **Capture Memories**  
+  Take photos using the camera or select from your gallery.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- 🌍 **Geocoding**  
+  Automatically converts GPS coordinates into a readable address.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 🎨 **Smart UI**  
+  Adaptive **Sky Blue theme** with Light and Dark mode support.
+
+- 💾 **Data Persistence**  
+  Saves your places locally so they remain available between sessions.
+
+- ⌨️ **Smooth UX**  
+  Automatically dismisses the keyboard on tap.
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/empty_home.png" width="250"/>
+  <img src="screenshots/empty_add.png" width="250"/>
+  <img src="screenshots/map_view.png" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/place_detail.png" width="250"/>
+  <img src="screenshots/fill_home.png" width="250"/>
+</p>
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Flutter  
+- **State Management:** Riverpod  
+- **Location Services:** Google Maps API  
+- **Image Handling:** Image Picker  
+- **HTTP Client:** http  
+
+---
+
+## 🚀 Setup & API Key Security
+
+This project uses `flutter_dotenv` to securely manage API keys.
+
+### 1. Prerequisites
+
+- A Google Cloud project with:
+  - Geocoding API enabled  
+  - Maps Static API enabled  
+
+---
+
+### 2. Environment Configuration
+
+Create a `.env` file in the root directory:
+
+```env
+GOOGLE_MAPS_API_KEY=your_api_key_here
+```
+
+> ⚠️ The `.env` file is already included in `.gitignore` to keep your API key secure.
+
+---
+
+### 3. Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/favorite_places.git
+
+# Navigate into the project
+cd favorite_places
+
+# Install dependencies
+flutter pub get
+
+# Run the app
+flutter run
+```
+
+---
+
+## 🎨 Themes
+
+| Mode        | Colors              | Description                                      |
+|------------|--------------------|--------------------------------------------------|
+| Light Mode | Sky Blue & White   | Clean and airy aesthetic for daytime use         |
+| Dark Mode  | Sky Blue & Black   | High-contrast, easy-on-the-eyes dark interface   |
+
+---
+
+## 🛡️ License
+
+Distributed under the **MIT License**.  
+See `LICENSE` for more information.
