@@ -23,7 +23,7 @@ class PlacesList extends StatelessWidget {
     }
 
     return ListView.builder(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       itemCount: places.length,
       itemBuilder: (ctx, index) {
         return ListTile(
